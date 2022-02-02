@@ -1,11 +1,10 @@
 /**
  * Esta es la superclase que va a hacer que herede al resto de instrumentos
- * es del tipo de la interfaz para evitar la independencia ya que es de timo especialización esta herencia.
- *
- *
+ * es del tipo de la interfaz para evitar la independencia ya que es de tipo especialización esta herencia.
+ * @property play Imprime la cancion
+ * @property reset te limpia la melodia
  */
 abstract class Instrumento:Ins {
-
     override fun play() {}
     override fun reset() {}
     override fun incorporaNota(nota: Nota) {}
