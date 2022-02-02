@@ -3,6 +3,7 @@
  * es del tipo de la interfaz para evitar la independencia ya que es de tipo especialización esta herencia.
  * @property play Imprime la cancion
  * @property reset te limpia la melodia
+ * @property incorporaNota te mete una melodia
  */
 abstract class Instrumento:Ins {
     override fun play() {}
