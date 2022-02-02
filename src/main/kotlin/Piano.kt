@@ -1,20 +1,19 @@
+/**
+ * Esta es la superclase que va a hacer que herede al resto de instrumentos
+ * es del tipo de la interfaz para evitar la independencia ya que es de timo especialización esta herencia.
+ *
+ *
+ */
+abstract class Instrumento:Ins {
 
-abstract class Intrumento{
-    private var melodia = mutableListOf<Nota>()
-    open fun reset() = melodia.clear()
-
-
+    override fun play() {}
+    override fun reset() {}
+    override fun incorporaNota(nota: Nota) {}
 }
-class Violin(override val nota: Nota) :Ins{
 
+class Violin(): Instrumento() {
     private var melodia = mutableListOf<Nota>()
     override fun play() {
-        melodia.add(nota)
-    }
-
-    override fun reset() = melodia.clear()
-
-    override fun incorporaNota(nota: Nota) {
         println("===> Tocando violin")
         melodia.forEach { nota ->
             when (nota) {
@@ -29,9 +28,15 @@ class Violin(override val nota: Nota) :Ins{
         }
         println("")
     }
+
+    override fun reset() = melodia.clear()
+
+    override fun incorporaNota(nota: Nota) {
+        melodia.add(nota)
     }
+}
 //Un piano es un instrumento que interpreta las notas con un timbre muy característico
-class Piano(override val nota: Nota) :Ins{
+class Piano() : Instrumento() {
 
    //tabla que almacena las notas a interpretar
     private var melodia = mutableListOf<Nota>()
@@ -46,7 +51,7 @@ class Piano(override val nota: Nota) :Ins{
 
     //Recorreremos las notas y las interpretaremos de la forma específica del piano.
     override fun play() {
-        println("Tocando piano")
+        println("===> Tocando piano")
         melodia.forEach { nota ->
             when (nota) {
                 Nota.DO -> print("dooo ")

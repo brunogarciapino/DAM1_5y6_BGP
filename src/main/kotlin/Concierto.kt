@@ -1,9 +1,7 @@
 interface Ins{
-
-    val nota: Nota
-    fun play()
-    fun reset()
-    fun incorporaNota(nota: Nota)
+    fun play() {}
+    fun reset() {}
+    fun incorporaNota(nota: Nota) {}
 }
 
 fun main() {
@@ -13,7 +11,7 @@ fun main() {
             "Violinista" to Violinista( Violin(), obra),
             "AlumnoMusico1" to AlumnoMusica( Violin(), obra),
             "AlumnoMusico2" to AlumnoMusica( Piano(), obra)
-      )
+     )
 
         repeat(4)
         {
